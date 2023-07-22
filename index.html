@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./dist/css/normilize.css" />
+        <link rel="stylesheet" href="./dist/css/fonts.css" />
+        <link rel="stylesheet" href="./dist/css/main.css" />
+        <title>Age calculator</title>
+    </head>
+    <body class="body">
+        <!-- App -->
+        <div class="app">
+            <!-- Wrap app forms -->
+            <div class="form">
+                <!-- Input days in form -->
+                <form class="form__day">
+                    <label for="day">day</label>
+                    <input
+                        type="number"
+                        name="day"
+                        id="input-day"
+                        class="form__input"
+                    />
+                </form>
+                <!-- Input month in form -->
+                <form class="form__month">
+                    <label for="month">month</label>
+                    <input
+                        type="number"
+                        name="month"
+                        id="input-month"
+                        class="form__input"
+                    />
+                </form>
+                <!-- Input years in form -->
+                <form class="form__year">
+                    <label for="year">year</label>
+                    <input
+                        type="number"
+                        name="year"
+                        id="input-year"
+                        class="form__input"
+                    />
+                </form>
+            </div>
+            <!-- Send block with line and button -->
+            <div class="send__wrap">
+                <div class="send__line-wrap">
+                    <div class="send__line"></div>
+                </div>
+                <button class="send__button" id="send__button"></button>
+            </div>
+            <!-- Block with counters -->
+            <div class="counters">
+                <!-- Counter of days -->
+                <div class="counters__years">
+                    <span class="counters__year-span">0</span>years
+                </div>
+                <!-- Counter of months -->
+                <div class="counters__months">
+                    <span class="counters__months-span">0</span>months
+                </div>
+                <!-- Counter of years -->
+                <div class="counters__days">
+                    <span class="counters__days-span">0</span>days
+                </div>
+            </div>
+        </div>
+        <script src="./dist/js/app.js"></script>
+    </body>
+</html>
