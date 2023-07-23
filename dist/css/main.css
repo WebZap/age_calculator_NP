@@ -1,0 +1,10 @@
+@import "./normilize.css";
+/*Add styles normilize*/
+@import "./fonts.css";
+/*Add styles fonts*/
+
+
+* {
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
