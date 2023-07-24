@@ -6,4 +6,8 @@ const addData = () => {
     return `год: ${date.getFullYear()}, Месяц ${date.getMonth() + 1}`
 } 
 
+const test = () => {
+    alert('test')
+}
+
 log(addData())

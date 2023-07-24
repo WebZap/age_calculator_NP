@@ -127,16 +127,23 @@ body {
 }
 
 .button img {
-  background: #854dff;
+  background: #000;
   border-radius: 50%;
   padding: 1.2rem;
   z-index: 200;
   transform: rotate(-90deg);
   animation: start 2s ease;
+  transition: 0.3s ease;
 }
+
+
 
 button:hover{
   cursor: pointer;
+}
+
+button img:hover{
+  background: #854dff;
 }
 
 .button-wrapper::after{
