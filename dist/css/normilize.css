@@ -17,6 +17,7 @@ html {
     /* 1 */
     -webkit-text-size-adjust: 100%;
     /* 2 */
+    font-size: 16px;
 }
 
 /* Sections
@@ -28,6 +29,7 @@ html {
 
 body {
     margin: 0;
+    padding: 0;
 }
 
 /**
@@ -36,6 +38,10 @@ body {
 
 main {
     display: block;
+}
+
+span{
+    color: #854dff ;
 }
 
 /**
