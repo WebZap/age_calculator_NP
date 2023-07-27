@@ -49,9 +49,6 @@ const inputFocus = () =>{
 }
 inputFocus()
 
-
-
-
 btn.addEventListener('click', () =>{
     const classManipulation = (inputElement,inputNumber) => {
         inputElement.classList.add('err-input');
