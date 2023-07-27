@@ -74,7 +74,7 @@ btn.addEventListener('click', () =>{
     }
 
     const conditionMonth = (value) =>{
-        const testOutMonth = value >= 13 || value < 0 
+        const testOutMonth = (value >= 13 || value < 0)
         return testOutMonth
     }
 
@@ -83,10 +83,20 @@ btn.addEventListener('click', () =>{
         const testOutYear = value >= myYear || value < 500;
         return testOutYear
     }
+    
+    const testFebruary = () => {
+        const test = inputMonth.value == 2 && inputDay.value >= 29;
+        return test;
+        
+    }
 
     const test =  (value,condition) => {
         const test =  condition(value) || isNaN(value) || value  === undefined || value === "" ;
         return test
+    }
+    
+    if(testFebruary()){
+        classManipulation(inputDay, 1);
     }
 
     if(test(inputDay.value,conditionDay) && test(inputMonth.value,conditionMonth) && test(inputYear.value,conditionYear)){
@@ -128,6 +138,12 @@ btn.addEventListener('click', () =>{
         classManipulation(inputYear, 3);
         return;
     }
+
+    if(testFebruary()){
+        classManipulation(inputDay, 1);
+        return;
+    }
+
     btn.classList.add('complete')
     inputElements.forEach((element, index) => {
         element.classList.add('input-complete');
