@@ -22,12 +22,13 @@ const inputYear = document.getElementById('input-year');
 const labels = document.querySelectorAll('.form__label');
 
 // btn
-const btn = document.getElementById('button');
+const btn = document.querySelector('.button img');
 
 // Validation
 const clianing = () =>{
 inputElements.forEach((element, index) => {
     element.addEventListener('input', () => {
+        btn.classList.remove('err-btn');
         element.classList.remove('err-input');
         labels[index].classList.remove('err-label');
         element.classList.remove('input-hover');
@@ -54,6 +55,7 @@ btn.addEventListener('click', () =>{
         inputElement.classList.add('err-input');
         inputElement.classList.add('input-focus');
         inputElement.classList.add('input-hover');
+        btn.classList.add('err-btn');
         labels[inputNumber - 1].classList.add('err-label');
     }
     const conditionDay = (value) =>{
@@ -116,5 +118,6 @@ btn.addEventListener('click', () =>{
         classManipulation(inputYear, 3);
         return;
     }
+    btn.classList.add('complete-btn')
     // тут будет дальнейшая логика
 })
