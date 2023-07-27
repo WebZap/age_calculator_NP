@@ -14,6 +14,7 @@ h1, h2, h3, h4, p {
 
 html {
     line-height: 1.15;
+    scroll-behavior: smooth;
     /* 1 */
     -webkit-text-size-adjust: 100%;
     /* 2 */
