@@ -230,4 +230,10 @@ button img:hover{
   }
 }
 
+@media (max-width: 789px){
+  html{
+    font-size: 10px;
+  }
+}
+
 
