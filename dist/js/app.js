@@ -25,6 +25,14 @@ const labels = document.querySelectorAll('.form__label');
 const btn = document.querySelector('.button img');
 
 // Validation
+const clianingAfterComplete = () => {
+    inputElements.forEach((element, index) => {
+        element.classList.remove('input-complete');
+        labels[index].classList.remove('label-complete');
+        btn.classList.remove('complete');
+    })
+}
+
 const clianing = () =>{
 inputElements.forEach((element, index) => {
     element.addEventListener('input', () => {
@@ -33,6 +41,7 @@ inputElements.forEach((element, index) => {
         labels[index].classList.remove('err-label');
         element.classList.remove('input-hover');
         element.classList.remove('input-focus');
+        clianingAfterComplete();
     })
 })
 }
@@ -57,6 +66,7 @@ btn.addEventListener('click', () =>{
         inputElement.classList.add('input-hover');
         btn.classList.add('err-btn');
         labels[inputNumber - 1].classList.add('err-label');
+        clianingAfterComplete();
     }
     const conditionDay = (value) =>{
         const testOutDay = value > 31 
@@ -118,6 +128,11 @@ btn.addEventListener('click', () =>{
         classManipulation(inputYear, 3);
         return;
     }
-    btn.classList.add('complete-btn')
+    btn.classList.add('complete')
+    inputElements.forEach((element, index) => {
+        element.classList.add('input-complete');
+        labels[index].classList.add('label-complete');
+        element.value = "";
+    })
     // тут будет дальнейшая логика
 })

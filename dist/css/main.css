@@ -15,8 +15,8 @@ body {
 }
 
 .center {
-  margin-left: calc(50% - 30rem);
-  margin-right: calc(50% - 30rem);
+  margin-left: calc(50% - 25rem);
+  margin-right: calc(50% - 25rem);
 }
 
 .header {
@@ -156,10 +156,6 @@ body {
   background: #ff0000;
 }
 
-.complete-btn {
-  background: #00ff40;
-}
-
 button:hover{
   cursor: pointer;
 }
@@ -204,6 +200,21 @@ button img:hover{
 
 .err-label{
   color: red;
+  transition: all 0.4s ease-in-out ;
+}
+
+.complete {
+  background: #00ff40;
+  transition: all 0.4s ease-in-out ;
+}
+
+.input-complete{
+  border-color: #00ff40;
+  transition: all 0.4s ease-in-out ;
+}
+
+.label-complete{
+  color: #00ff40;
   transition: all 0.4s ease-in-out ;
 }
 
