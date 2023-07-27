@@ -77,6 +77,11 @@ body {
   line-height: 3rem; 
 }
 
+.label-focus{
+  color: #854dff;
+  transition: all 0.4s ease-out; 
+}
+
 
 .form__input{
   background: #fff;
@@ -104,12 +109,22 @@ body {
 }
 
 .form__input:hover{
-  border-color: #854dff;
+  border-color: #854dff82;
   cursor: pointer;
 }
 
 .form__input:focus{
   border-color:#854dff;
+}
+
+.input-focus:focus{
+  border-color: rgb(255, 0, 89);
+  transition: all 0.4s ease-in-out;
+}
+
+.input-hover:hover{
+  border-color: rgb(255, 0, 89);
+  transition: all 0.4s ease-in-out;
 }
 
 .button-wrapper{
@@ -171,9 +186,19 @@ button img:hover{
   color: #854dff;
 }
 
+/* Доп классы */
 
+.err-input{
+  border: none;
+  border: red solid 3px;
+  transition: all 0.4s ease-in-out ;
+  /* border-color: rgb(167, 3, 3); */
+}
 
-
+.err-label{
+  color: red;
+  transition: all 0.4s ease-in-out ;
+}
 
 @keyframes start {
   0%{
