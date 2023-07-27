@@ -35,6 +35,7 @@ inputElements.forEach((element, index) => {
     })
 })
 }
+clianing()
 
 const inputFocus = () =>{
     inputElements.forEach((element, index) => {
@@ -46,10 +47,9 @@ const inputFocus = () =>{
         })
     })
 }
-
 inputFocus()
 
-clianing()
+
 
 
 btn.addEventListener('click', () =>{
@@ -65,13 +65,13 @@ btn.addEventListener('click', () =>{
     }
 
     const conditionMonth = (value) =>{
-        const testOutMonth = value >= 12 || value < 0 
+        const testOutMonth = value >= 13 || value < 0 
         return testOutMonth
     }
 
     const conditionYear = (value) => {
         let myYear = (new Date()).getFullYear();
-        const testOutYear = value > myYear || value < 0;
+        const testOutYear = value >= myYear || value < 500;
         return testOutYear
     }
 
@@ -80,28 +80,44 @@ btn.addEventListener('click', () =>{
         return test
     }
 
-    // if(test(inputDay.value,conditionDay) && test(inputMonth.value,conditionMonth) && test(inputMonth.value,conditionYear)){
-    //     classManipulation(inputDay, 1);
-    //     classManipulation(inputMonth, 2);
-    //     classManipulation(inputYear, 3);
-    // }
-
-    // if(test(inputDay.value,conditionDay) && test(inputMonth.value,conditionMonth)){
-    //     classManipulation(inputYear, 3);
-    // }
-
-    if(test(inputDay.value,conditionDay)){
+    if(test(inputDay.value,conditionDay) && test(inputMonth.value,conditionMonth) && test(inputYear.value,conditionYear)){
         classManipulation(inputDay, 1);
-        return;
-    }
-    if(test(inputMonth.value,conditionMonth)){
         classManipulation(inputMonth, 2);
-        return;
-    }
-    if(test(inputMonth.value,conditionYear)){
         classManipulation(inputYear, 3);
         return;
     }
 
+    if(test(inputDay.value,conditionDay) === true && test(inputMonth.value,conditionMonth) === false && test(inputYear.value,conditionYear) === false){
+        classManipulation(inputDay, 1);
+        return;
+    } 
 
+    if(test(inputDay.value,conditionDay) === false && test(inputMonth.value,conditionMonth) === true && test(inputYear.value,conditionYear) === false){
+        classManipulation(inputMonth, 2);
+        return;
+    } 
+
+    if(test(inputDay.value,conditionDay) === false && test(inputMonth.value,conditionMonth) === false && test(inputYear.value,conditionYear) === true){
+        classManipulation(inputYear, 3);
+        return;
+    } 
+
+    if(test(inputDay.value,conditionDay) === true && test(inputMonth.value,conditionMonth) === true && test(inputYear.value,conditionYear) === false){
+        classManipulation(inputDay, 1);
+        classManipulation(inputMonth, 2);
+        return;
+    } 
+
+    if(test(inputDay.value,conditionDay) === false && test(inputMonth.value,conditionMonth) === true && test(inputYear.value,conditionYear) === true){
+        classManipulation(inputMonth, 2);
+        classManipulation(inputYear, 3);
+        return;
+    } 
+
+    if(test(inputDay.value,conditionDay) === true && test(inputMonth.value,conditionMonth) === false && test(inputYear.value,conditionYear) === true){
+        classManipulation(inputDay, 1);
+        classManipulation(inputYear, 3);
+        return;
+    }
+    // тут будет дальнейшая логика
 })
