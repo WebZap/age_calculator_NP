@@ -142,6 +142,7 @@ body {
 }
 
 .img {
+  width: 5.7rem;
   background: #854dff;
   border-radius: 50%;
   padding: 1.2rem;
@@ -168,7 +169,7 @@ button img:hover{
   height: 1px;
   width: 100%;
   background: #DCDCDC;
-  top: 2.625rem;
+  top: 33%;
 }
 
 .counters__text{
@@ -256,6 +257,15 @@ button img:hover{
   html{
     font-size: 10px;
   }
+
+  .form__input{
+    height: 5.5rem;
+    font-size: 2.5rem;
+  }
+
+  .img{
+    width: 7rem;
+    }
 }
 
 @media (max-width: 520px){
@@ -263,10 +273,6 @@ button img:hover{
     font-size: 9px;
   }
 
-  .form__input{
-    height: 5.5rem;
-    font-size: 2.5rem;
-  }
 }
 
 @media (max-width: 460px){
@@ -274,7 +280,7 @@ button img:hover{
     font-size: 8px;
   }
   .header{
-    margin-top: 15rem;
+    margin-top: 10rem;
   }
 }
 

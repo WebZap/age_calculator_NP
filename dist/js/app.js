@@ -10,6 +10,8 @@ const addData = () => {
 // log(addData())
 
 // add DOM elements
+const counters = document.querySelectorAll('.counters__text span');
+log(counters)
 const inputContainers = document.querySelectorAll('.form__input-wrapper');
 const inputElements = document.querySelectorAll('.form__input');
 
@@ -23,6 +25,9 @@ const labels = document.querySelectorAll('.form__label');
 
 // btn
 const btn = document.querySelector('.button img');
+// countersLogic
+
+
 
 // Validation
 const clianingAfterComplete = () => {
@@ -41,7 +46,8 @@ inputElements.forEach((element, index) => {
         labels[index].classList.remove('err-label');
         element.classList.remove('input-hover');
         element.classList.remove('input-focus');
-        clianingAfterComplete();
+        clianingAfterComplete(false);
+        logCounters()
     })
 })
 }
@@ -80,7 +86,7 @@ btn.addEventListener('click', () =>{
 
     const conditionYear = (value) => {
         let myYear = (new Date()).getFullYear();
-        const testOutYear = value >= myYear || value < 500;
+        const testOutYear = value > myYear || value < 500;
         return testOutYear
     }
     
@@ -94,7 +100,20 @@ btn.addEventListener('click', () =>{
         const test =  condition(value) || isNaN(value) || value  === undefined || value === "" ;
         return test
     }
+
+    const testMoreNewDate = (myDay, myMonth, myYear) => {
+        const NewDate = new Date();
+        const testYear = +(NewDate.getFullYear()) === +(myYear);
+        const testMonth = (+(NewDate.getMonth()) + 1) < +(myMonth) || (+(NewDate.getMonth()) + 1) === +(myMonth);
+        const testDay = +(NewDate.getDate()) < myDay;
+        return testYear && testMonth && testDay;
+    }
     
+    const isDate = (myDay, myMonth, myYear) => {
+        const myDate = new Date(myYear, (myMonth-1), myDay);
+        return myDate.getFullYear() == myYear && (+(myDate.getMonth()) + 1) !== +myMonth
+    } 
+
     if(testFebruary()){
         classManipulation(inputDay, 1);
     }
@@ -144,11 +163,27 @@ btn.addEventListener('click', () =>{
         return;
     }
 
+    if(isDate(inputDay.value, inputMonth.value, inputYear.value)){
+        classManipulation(inputDay, 1);
+        classManipulation(inputMonth, 2);
+        classManipulation(inputYear, 3);
+        return;
+    }
+
+    if(testMoreNewDate(inputDay.value, inputMonth.value, inputYear.value)){
+        classManipulation(inputDay, 1);
+        classManipulation(inputMonth, 2);
+        classManipulation(inputYear, 3);
+        return;
+    }
+
+    // Проверки оконченны
     btn.classList.add('complete')
     inputElements.forEach((element, index) => {
         element.classList.add('input-complete');
         labels[index].classList.add('label-complete');
         element.value = "";
+        
     })
     // тут будет дальнейшая логика
 })
